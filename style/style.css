@@ -1404,16 +1404,6 @@ body.modo-branco #floating-navbar a {
   color: #222 !important;
 }
 
-/* body.modo-branco #floating-navbar a:hover {
-  background-color: rgba(255, 0, 0, 0.2);
-  color: #FF5900 !important;
-}
-
-body.modo-branco ::selection {
-  background-color: #FF5900;
-  color: #ffffff;
-} */
-
 .body-modal-aberto {
   overflow: hidden !important;
 }
@@ -1453,4 +1443,9 @@ body.modo-branco #floating-navbar a.active {
     background: #FF5900;
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
+}
+
+body.modo-branco ::selection {
+  background-color: #FF5900;
+  color: rgb(255, 255, 255);
 }

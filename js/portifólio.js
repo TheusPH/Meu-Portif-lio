@@ -59,4 +59,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    document.getElementById('toggle-modo').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.classList.toggle('modo-branco');
+    });
+});
+
+// Função para abrir modal
+function abrirModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.add('active');
+    document.body.classList.add('body-modal-aberto');
+  }
+}
+
+// Função para fechar todos os modais
+function fecharModais() {
+  document.querySelectorAll('.modal.active').forEach(modal => {
+    modal.classList.remove('active');
+  });
+  document.body.classList.remove('body-modal-aberto');
+}
+
+// Eventos para botões de fechar e abertura dos modais
+window.addEventListener('DOMContentLoaded', function() {
+  // Fechar ao clicar no X
+  document.querySelectorAll('.modal .close-button').forEach(btn => {
+    btn.addEventListener('click', fecharModais);
+  });
+
+  // Fechar ao clicar fora do conteúdo
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) fecharModais();
+    });
+  });
+
+  // Abrir modal ao clicar na div correta
+  document.querySelectorAll('.modal-trigger[data-modal-target]').forEach(trigger => {
+    trigger.addEventListener('click', function() {
+      const modalId = this.getAttribute('data-modal-target');
+      abrirModal(modalId);
+    });
+  });
 });

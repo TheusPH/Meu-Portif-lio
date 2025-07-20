@@ -915,6 +915,34 @@ body {
 
   .fim img {
     width: 55px;
+
+  }
+
+  .card,
+  .card3 {
+    width: 320px;
+    height: 470px;
+  }
+
+  .card , #imgdani {
+    font-size: 0.9rem;
+  }
+
+  .card > img {
+    height:165px;
+  }
+
+  #imgdani {
+    height: 160px
+  }
+
+  .arrumar > div > a ,
+  .arrumar > div > .modal-trigger {
+    width: 120px;
+  }
+
+  .card3 > h1 {
+    font-size: 1.5rem;
   }
 }
 
